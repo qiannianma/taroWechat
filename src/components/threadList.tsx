@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { AtListItem } from "taro-ui";
 import { View } from "@tarojs/components";
 import VirtualList from "@tarojs/components/virtual-list";
 import "./thread.less";
