@@ -1,5 +1,9 @@
 export default {
-  pages: ["pages/index/index", "pages/hot/hot", "pages/personal/personal"],
+  pages: [
+    "pages/index/index",
+    "pages/category/category",
+    "pages/personal/personal"
+  ],
   tabBar: {
     list: [
       {
@@ -9,10 +13,10 @@ export default {
         text: "主页"
       },
       {
-        iconPath: "resource/hotest.png",
-        selectedIconPath: "resource/hotest_on.png",
-        pagePath: "pages/hot/hot",
-        text: "热门"
+        iconPath: "resource/category.png",
+        selectedIconPath: "resource/category_on.png",
+        pagePath: "pages/category/category",
+        text: "分类"
       },
       {
         iconPath: "resource/person.png",
@@ -24,7 +28,7 @@ export default {
     color: "#02affb",
     selectedColor: "#3578e5",
     backgroundColor: "#fff",
-    borderStyle: "white"
+    borderStyle: "black"
   },
 
   window: {

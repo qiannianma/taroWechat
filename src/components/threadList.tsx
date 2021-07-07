@@ -1,23 +1,47 @@
-/*
- * @Descripttion:
- * @version:
- * @Author: Jinfeng Ma
- * @Date: 2021-07-01 17:11:37
- * @LastEditors: Jinfeng Ma
- * @LastEditTime: 2021-07-01 17:40:18
- */
-import { Component } from "react";
-import PropTypes from "prop-types";
-import { View, Text } from "@tarojs/components";
+import React, { Component } from "react";
+import { AtListItem } from "taro-ui";
+import { View } from "@tarojs/components";
+import VirtualList from "@tarojs/components/virtual-list";
+import "./thread.less";
 
-class ThreadList extends Component {
-  render() {
-    return <h1>Hello, {}</h1>;
-  }
+function buildData(offset = 0) {
+  return Array(100)
+    .fill(0)
+    .map((_, i) => i + offset);
 }
 
-// ThreadList.propTypes = {
-//   name: PropTypes.string
-// };
+
+const Row = React.memo(({ id, index, data }) => {
+  return (
+      <View id={id}
+        className={index % 2 ? "ListItemOdd" : "ListItemEven"}
+      >
+          Number: {index} :{data[index]}
+      </View>
+  );
+});
+
+class ThreadList extends Component {
+  state = {
+    data: buildData(0)
+  };
+
+  render() {
+    const { data } = this.state;
+    const dataLen = data.length;
+    return (
+        <VirtualList
+          className='VirtualList'
+          height={500}
+          width='100%'
+          itemData={data} /* 渲染列表的数据 */
+          itemCount={dataLen} /*  渲染列表的长度 */
+          itemSize={100}
+        >
+        {Row}
+      </VirtualList>
+    );
+  }
+}
 
 export { ThreadList };

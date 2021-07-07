@@ -1,0 +1,13 @@
+.ListItemOdd {
+  border-bottom: 1px solid #eee;
+  background-color: aquamarine;
+  height: 100%;
+}
+.ListItemEven {
+  border-bottom: 1px solid #383636;
+  background-color: bisque;
+  height: 100%;
+}
+.VirtualList {
+  background-color: #fff;
+}
