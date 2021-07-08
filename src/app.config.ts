@@ -10,7 +10,8 @@ export default {
         iconPath: "resource/home.png",
         selectedIconPath: "resource/home_on.png",
         pagePath: "pages/index/index",
-        text: "主页"
+        text: "主页1"
+        
       },
       {
         iconPath: "resource/category.png",
@@ -35,6 +36,7 @@ export default {
     backgroundTextStyle: "light",
     navigationBarBackgroundColor: "#fff",
     navigationBarTitleText: "WeChat",
-    navigationBarTextStyle: "black"
+    navigationBarTextStyle: "black",
+    navigationStyle:"custom"
   }
 };

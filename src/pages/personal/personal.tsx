@@ -4,12 +4,12 @@
  * @Author: Jinfeng Ma
  * @Date: 2021-07-01 16:17:01
  * @LastEditors: Jinfeng Ma
- * @LastEditTime: 2021-07-07 16:22:22
+ * @LastEditTime: 2021-07-08 16:47:35
  */
 import { Component } from "react";
 import { View } from "@tarojs/components";
-import { AtButton } from 'taro-ui'
-// import "./index.less";
+import { AtButton } from 'taro-ui';
+import "taro-ui/dist/style/components/button.scss"; // 按需引入
 
 export default class Personal extends Component {
   componentWillMount() {}
@@ -25,7 +25,7 @@ export default class Personal extends Component {
   render() {
     return (
         <View>
-            <AtButton type='primary'>Logon</AtButton>
+            <AtButton className='btn-max-w' type='primary'>Logon</AtButton>
       </View>
     );
   }
