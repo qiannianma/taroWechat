@@ -5,16 +5,21 @@ import { AtButton } from 'taro-ui';
 import "taro-ui/dist/style/components/button.scss";
 import "./index.less";
 import { ThreadList  } from "../../components/threadList";
-import { NavBar } from "../../components/navbar";
 
 export default class Index extends Component {
+    
+    
     componentWillMount() {}
 
     componentDidMount() {}
 
     componentWillUnmount() {}
-
-    componentDidShow() {}
+    
+    componentDidShow () {
+     if (typeof this.$scope.getTabBar === 'function' && this.$scope.getTabBar()) {
+            this.$scope.getTabBar().$component.setState({selected: 0})
+        }
+    }
 
     componentDidHide() { }
 
@@ -35,10 +40,12 @@ export default class Index extends Component {
     }
     handleTabbar() { }
 
+    // index.js
+    
+
     render() {
         const scrollTop = 0
         const Threshold = 20
-        const currentTabIndex=1
         return (
         <View>
             <ScrollView
@@ -53,13 +60,6 @@ export default class Index extends Component {
                 <AtButton>pull refresh</AtButton>
                 <ThreadList></ThreadList>
             </ScrollView>
-            <NavBar current={currentTabIndex} background='#f8f8f8' color='#999' tintColor='#6190e8' fixed onClick={this.handleTabbar}
-              tabList={[
-                    {icon: '\ue627', title: '首页', badge: 8},
-                    {icon: '\ue61e', title: '商品'},
-                    {icon: '\ue605', title: '个人中心', dot: true},
-                ]}
-            />
         </View>
     );
   }

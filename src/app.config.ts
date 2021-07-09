@@ -4,7 +4,12 @@ export default {
     "pages/category/category",
     "pages/personal/personal"
   ],
-  tabBar: {
+tabBar: {
+    color: "#02affb",
+    selectedColor: "#3578e5",
+    backgroundColor: "#fff",
+    borderStyle: "black",
+    custom: true,
     list: [
       {
         iconPath: "resource/home.png",
@@ -26,10 +31,9 @@ export default {
         text: "我"
       }
     ],
-    color: "#02affb",
-    selectedColor: "#3578e5",
-    backgroundColor: "#fff",
-    borderStyle: "black"
+    usingComponents: {
+        customtabbar: "custom-tab-bar/index"
+      }
   },
 
   window: {
