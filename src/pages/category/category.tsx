@@ -2,19 +2,12 @@
  * @Descripttion:
  * @version:
  * @Author: Jinfeng Ma
- * @Date: 2021-07-01 15:10:42
- * @LastEditors: Jinfeng Ma
- * @LastEditTime: 2021-07-09 17:53:13
- */
-/*
- * @Descripttion:
- * @version:
- * @Author: Jinfeng Ma
  * @Date: 2021-07-01 16:17:01
  * @LastEditors: Jinfeng Ma
- * @LastEditTime: 2021-07-09 14:12:35
+ * @LastEditTime: 2021-07-12 17:17:17
  */
 import { Component } from "react";
+import Taro from '@tarojs/taro';
 import { View } from "@tarojs/components";
 import { AtButton } from 'taro-ui';
 import "taro-ui/dist/style/components/button.scss"; // 按需引入
@@ -26,13 +19,14 @@ export default class Category extends Component {
 
   componentDidMount() {}
 
-    componentWillUnmount() { }
+  componentWillUnmount() { }
 
-  componentDidShow () {
-   if (typeof this.$scope.getTabBar === 'function' && this.$scope.getTabBar()) {
-            this.$scope.getTabBar().$component.setState({selected: 1})
-    }  
-}
+  componentDidShow() {
+    const page = Taro.getCurrentPages()[0];
+    if (typeof page.getTabBar === 'function' && page.getTabBar()) {
+        page.getTabBar().$component.setState({selected: 1})
+    }
+  }
 
   componentDidHide() {}
 

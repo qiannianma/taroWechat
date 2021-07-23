@@ -3,14 +3,7 @@ import { View } from "@tarojs/components";
 import VirtualList from "@tarojs/components/virtual-list";
 import "./thread.less";
 
-function buildData(offset = 0) {
-  return Array(100)
-    .fill(0)
-    .map((_, i) => i + offset);
-}
-
-
-const Row = React.memo(({ id, index, data }) => {
+let createRow=({ id, index, data }) => {
   return (
       <View id={id}
         className={index % 2 ? "ListItemOdd" : "ListItemEven"}
@@ -18,15 +11,15 @@ const Row = React.memo(({ id, index, data }) => {
           Number: {index} :{data[index]}
       </View>
   );
-});
+}
+
+
+const Row = React.memo(createRow);
 
 class ThreadList extends Component {
-  state = {
-    data: buildData(0)
-  };
-
+    
   render() {
-    const { data } = this.state;
+    const  data  = this.props.data;
     const dataLen = data.length;
     return (
         <VirtualList

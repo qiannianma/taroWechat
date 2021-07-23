@@ -3,8 +3,9 @@ export default {
     "pages/index/index",
     "pages/category/category",
     "pages/personal/personal"
-  ],
-tabBar: {
+    ],
+  usingComponents: {},
+  tabBar: {
     color: "#02affb",
     selectedColor: "#3578e5",
     backgroundColor: "#fff",
@@ -31,16 +32,13 @@ tabBar: {
         text: "我"
       }
     ],
-    usingComponents: {
-        customtabbar: "custom-tab-bar/index"
-      }
+    
   },
 
   window: {
     backgroundTextStyle: "light",
     navigationBarBackgroundColor: "#fff",
     navigationBarTitleText: "WeChat",
-    navigationBarTextStyle: "black",
-    navigationStyle:"custom"
+    navigationBarTextStyle: "black"
   }
 };
